@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+    <HEAD>
+        <TITLE>Resizer ActiveX demo</TITLE>
+        <link rel="stylesheet" href="css/AwsResizerDemo.css" type="text/css" />
+        <script language = "javascript" src = "Scripts/Demo.js" ></script>
+    </HEAD>
+<body >
+
+    <div align="center" style="padding: 1em">
+        <table cellSpacing="0" cellPadding="0" border="0" style="border-collapse:collapse; ">            
+            <tr >
+                <td id="idImgCaption" colspan="3">Is not loaded</td>
+            </tr>
+            <tr>
+                <td colspan="3" align ="center" style="width:350; height:300" >
+                    <OBJECT ID="idResizer"
+                            CLASSID="CLSID:5A0E70A5-9569-4408-B1C8-01BF404634AD"
+			    codebase = "file:///I:\Work\ResizerSln\AWSResizer\Bin\AWSResizer.cab#Version=1,0,0,1"
+			VIEWASTEXT >
+
+						<param name="DialogTitle" value="Select Image for uploading" />                            
+                        <param name="Width" value="350" />
+                        <param name="Height" value="300" />
+						<param name="ImageFullName" value="C:\Scan\s2.png" />
+                        <param name="BorderWidth" value="3" />
+						<param name="DialogMasks" value="All Images (*.png, *.gif, *.jpg, *.jpeg, *.bmp, *.tif, *.tiff, *.jpe)\*.png;*.gif;*.jpg;*.jpeg;*.bmp;*.tif;*.tiff;*.jpe\JPEG (*.jpg, *.jpeg, *jpe)\*.jpg;*.jpeg;*jpe\GIF (*.gif)\*.gif\All Files (*.*)\*.*" />
+						<param name="MaxWidth" value="400" />
+                        <param name="MaxHeight" value="400" />
+                        <param name="UploadUrl" value = "UploadForm.aspx" />
+                    </OBJECT>
+                </td>
+            </tr>
+            <tr id="idCtls" >
+                <td colspan = "3" >
+                    <table width="100%" cellSpacing="0" cellPadding="0" border="0" style="border-collapse:collapse;  " >
+                        <colgroup>
+                            <col></col>
+                            <col width="2em"></col>
+                            <col width="5em"></col>
+                        </colgroup>
+                        <tr>
+                            <td ><input   class="CBox" id = "idFileName" type = "text" value = "" title = "File path (type and press ENTER)" /></td>
+                                <!--a href="login.php" class="mainmenu"><img src="templates/SterlingBeaver/images/icon_mini_login.gif" width="12" height="13" border="0" alt="Log in" hspace="3" />Log in</a-->
+                            <td><input class="CBtn" id = "idSelectImg" type = "button" value = "..." NAME="idSelectImg" title="Browsing image file"/></td>
+                            <td><input class="CBtn" id = "idUpload" type = "button" value = "Upload" NAME="idUpload" title="Uploading current selected image" /></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <script language = "javascript" >
+       var initV = init();
+        //var a = alert( typeof(init) );
+    </script>
+
+</body>
+</HTML>

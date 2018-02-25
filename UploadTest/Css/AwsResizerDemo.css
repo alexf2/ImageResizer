@@ -1,0 +1,52 @@
+body{
+	font-size : 8px;
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	margin-left : 0px;
+	margin-right : 0px;
+	margin-top : 0px;
+	min-height : 0px;
+	background-image : url(../Images/bg.jpg);
+	
+	scrollbar-face-color : #47392B;
+	scrollbar-highlight-color : #E7B98A;
+	scrollbar-arrow-color : #FFFFE1;
+}
+
+tr#idCtls td {	
+	vertical-align: middle;
+	padding-top: 2pt; padding-bottom: 2pt;
+	margin: 0;
+	background-color: #A27258;
+}
+
+td#idImgCaption
+{
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;    
+    font-size: 11px;    
+    color: white;
+    background-color: #A27258;
+    padding: 2pt;
+}
+input.CBox
+{
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;    
+    font-size: 11px;    
+    border-style: solid;
+    margin-left: 2pt;   
+    width: 100%; 
+    height: 16pt;
+}
+input.CBtn
+{
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;    
+    font-size: 11px;    
+    padding: 2pt;
+    font-weight: bold;
+    color: white;
+    background-color: #47392B;
+    border-style: none;
+    font-size: 11px;
+    margin:0;
+    
+    margin-right: 2pt;
+}

@@ -1,0 +1,143 @@
+import "C:\Program Files\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\prsht.idl";
+import "C:\Program Files\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\mshtml.idl";
+import "c:\program files\microsoft visual studio .net 2003\vc7\platformsdk\include\dimm.idl";
+import "C:\Program Files\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\mshtmhst.idl";
+import "c:\program files\microsoft visual studio .net 2003\vc7\platformsdk\include\docobj.idl";
+import "C:\Program Files\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\exdisp.idl";
+import "C:\Program Files\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\include\objsafe.idl";
+
+[
+	object,
+	uuid(9319D551-94DB-4ec1-93AF-792FC7AB1B37),
+	helpstring("IBindingNotify Interface"),
+	pointer_default(unique)
+] 
+#line 14 "c:\\work\\resizersln\\awsresizer\\bsc.h"
+interface IBindingNotify : IUnknown {
+#line 16 "c:\\work\\resizersln\\awsresizer\\bsc.h"
+	HRESULT  OnProgress([in] IBindStatusCallback *pSender, [in] ULONG ulProgress, [in] ULONG ulProgressMax, [in] ULONG ulStatusCode, [in] BSTR bsStatusText);
+#line 19 "c:\\work\\resizersln\\awsresizer\\bsc.h"
+	HRESULT  OnStartBinding([in] DWORD dwReserved, [in] IBinding *pBinding);
+	HRESULT  PreBindMoniker([in] IBindCtx *pBindCtx, [in] IMoniker *pMoniker);
+	HRESULT  OnBindingFailure([in] HRESULT hr, [in] BSTR bsError);
+};
+
+[
+	object,
+	uuid(DE079467-E2D6-40BD-81EE-B63DF5BE3C46),
+	dual,
+	oleautomation,
+	nonextensible,
+	hidden,
+	helpstring("IResizer Interface"),
+	pointer_default(unique)
+] 
+#line 42 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+interface IResizer : IDispatch {
+#line 46 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propput,bindable,requestedit,id(1)] HRESULT  Width([in] long lWidth);
+#line 48 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propget,bindable,requestedit,id(1)] HRESULT  Width([out,retval] long *lWidth);
+#line 51 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propput,bindable,requestedit,id(2)] HRESULT  Height([in] long lHeight);
+#line 53 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propget,bindable,requestedit,id(2)] HRESULT  Height([out,retval] long *lHeight);
+#line 56 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propput,bindable,requestedit,id(3)] HRESULT  NavigateOnFinishUrl([in] BSTR bsURL);
+#line 58 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propget,bindable,requestedit,id(3)] HRESULT  NavigateOnFinishUrl([out,retval] BSTR *pbsURL );
+#line 61 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propput,bindable,requestedit,id(4)] HRESULT  ImageFullName([in] BSTR bsURL);
+#line 63 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propget,bindable,requestedit,id(4)] HRESULT  ImageFullName([out,retval] BSTR *pbsURL );
+#line 66 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propput,bindable,requestedit,id(7)] HRESULT  UploadUrl([in] BSTR bsURL);
+#line 68 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propget,bindable,requestedit,id(7)] HRESULT  UploadUrl([out,retval] BSTR *pbsURL );
+#line 71 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propput,bindable,requestedit,id(8)] HRESULT  MaxWidth([in] long lWidth);
+#line 73 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propget,bindable,requestedit,id(8)] HRESULT  MaxWidth([out,retval] long *plWidth);
+#line 76 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propput,bindable,requestedit,id(9)] HRESULT  MaxHeight([in] long lHeight);
+#line 78 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propget,bindable,requestedit,id(9)] HRESULT  MaxHeight([out,retval] long *plHeight);
+#line 81 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propget,id(10)] HRESULT  ImagePropsDescription([out,retval] BSTR *pbsDescr );
+#line 86 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[id(5)] HRESULT  SelectImage([out,retval] BSTR *bsImgFileName );
+#line 89 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[id(6)] HRESULT  UploadImage();
+#line 94 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propput,bindable,requestedit,id((-501))] HRESULT  BackColor([in] VARIANT *clr);
+#line 96 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propget,bindable,requestedit,id((-501))] HRESULT  BackColor([out,retval] VARIANT *pclr);
+#line 99 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propput,bindable,requestedit,id((-503))] HRESULT  BorderColor([in] VARIANT *style);
+#line 101 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propget,bindable,requestedit,id((-503))] HRESULT  BorderColor([out,retval] VARIANT *pstyle);
+#line 104 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propput,bindable,requestedit,id((-505))] HRESULT  BorderWidth([in] long width);
+#line 106 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propget,bindable,requestedit,id((-505))] HRESULT  BorderWidth([out,retval] long *width);
+#line 109 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propput,bindable,requestedit,id((-513))] HRESULT  ForeColor([in] VARIANT *clr);
+#line 111 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propget,bindable,requestedit,id((-513))] HRESULT  ForeColor([out,retval] VARIANT *pclr);
+#line 114 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propput,bindable,requestedit,id((-519))] HRESULT  BorderVisible([in] VARIANT_BOOL vbool);
+#line 117 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propget,bindable,requestedit,id((-519))] HRESULT  BorderVisible([out,retval] VARIANT_BOOL *pbool);
+#line 122 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propput,bindable,requestedit,id(11)] HRESULT  InitialPath([in] BSTR bsPath);
+#line 125 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propput,bindable,requestedit,id(12)] HRESULT  DialogTitle([in] BSTR bsPath);
+#line 127 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propget,bindable,requestedit,id(12)] HRESULT  DialogTitle([out,retval] BSTR *pbs );
+#line 130 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propput,bindable,requestedit,id(13)] HRESULT  DialogMasks([in] BSTR bsMasks);
+#line 132 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propget,bindable,requestedit,id(13)] HRESULT  DialogMasks([out,retval] BSTR *pbsMasks );
+#line 135 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propput,bindable,requestedit,id(14)] HRESULT  DialogDefaultExt([in] BSTR bsExt);
+#line 137 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propget,bindable,requestedit,id(14)] HRESULT  DialogDefaultExt([out,retval] BSTR *pbsExt );
+#line 140 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propput,bindable,requestedit,id(15)] HRESULT  DialogCenterInParent([in] VARIANT_BOOL vCenter);
+#line 142 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	[propget,bindable,requestedit,id(15)] HRESULT  DialogCenterInParent([out,retval] VARIANT_BOOL *pvCenter);
+};
+
+
+[ version(1.0), uuid(73DBDE64-F31F-4186-A868-32E2FB2EED38), helpstring("AWSResizer 1.0 Type Library") ]
+library AWSResizer
+{
+	importlib("stdole2.tlb");
+	importlib("olepro32.dll");
+
+	[
+		uuid(8E27D881-DA9C-471A-86E9-D45FB12CE2B4),
+		helpstring("_IResizerEvents Interface")
+	] 
+#line 153 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	dispinterface _IResizerEvents {
+	properties:
+
+	methods:
+	};
+
+	[
+		aggregatable,
+		version(1.0),
+		uuid(5A0E70A5-9569-4408-B1C8-01BF404634AD),
+		helpstring("Resizer Class")
+	] 
+#line 178 "c:\\work\\resizersln\\awsresizer\\resizer.h"
+	coclass CResizer {
+		[default]	interface IResizer;
+		interface IBindingNotify;
+		[source]	interface _IResizerEvents;
+	};
+
+}
+

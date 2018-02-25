@@ -1,0 +1,15 @@
+body{
+	font-size : 10px;
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	margin-left : 0px;
+	margin-right : 0px;
+	margin-top : 0px;
+	min-height : 0px;
+	background-color: #E6E6E6;
+}
+
+.CLogon
+{
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
